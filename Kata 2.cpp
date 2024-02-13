@@ -1,4 +1,5 @@
 //CodeWars Project Kata 2 (C++)
+//Uploaded to GitHub
 #include <string>
 #include <stack>
 #include <iostream>
