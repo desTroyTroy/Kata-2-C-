@@ -1,3 +1,4 @@
+//CodeWars Project Kata 2 (C++)
 #include <string>
 #include <stack>
 #include <iostream>
