@@ -10,8 +10,8 @@
 using namespace std;
 
 //Function prototypes
-std::string spinWords(const std::string& str);
-std::string reverseIt(std::string& word);
+std::string spinWords(const std::string& );
+std::string reverseIt(std::string& );
 
 int main()
 {   //Set the input string.
@@ -78,3 +78,44 @@ std::string reverseIt(std::string& word) {
     }
     return retWord;
 }
+
+//Best Practice
+//Alternate 1
+/*
+#include <string>
+#include <algorithm>
+#include <sstream>
+std::string spinWords(const std::string &str)
+{
+    std::stringstream ss(str);
+    std::string result;
+    std::string buff;
+    while (ss >> buff) {
+        if (buff.size() >= 5) {
+            std::reverse(buff.begin(), buff.end());
+        }
+        result += buff + ' ';
+    }
+    result.pop_back();
+    return result;
+}*/
+
+//Alternate 2
+/*
+#include <algorithm>
+
+std::string spinWords(const std::string &str)
+{
+    std::stringstream in(str);
+    std::string res = "";
+    for (;;)
+    {
+        std::string s;
+        in >> s;
+        if (s.size() == 0) break;
+        if (s.size() >= 5) std::reverse(s.begin(), s.end());
+        if (res.size() != 0) res += " ";
+        res += s;
+    }
+    return res;
+}*/
